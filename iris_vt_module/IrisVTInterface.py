@@ -127,15 +127,15 @@ class IrisVTInterface(IrisModuleInterface):
 
         for element in data:
             # Check that the IOC we receive is of type the module can handle and dispatch
-            if 'ip-' in element.ioc_type.type_name and module_conf.get('vt_allow_send_ip'):
+            if 'ip-' in element.ioc_type.type_name and module_conf.get('vt_allow_send_ip') is True:
                 status = vt_handler.handle_vt_ip(ioc=element)
                 in_status = InterfaceStatus.merge_status(in_status, status)
 
-            elif 'domain' in element.ioc_type.type_name and module_conf.get('vt_allow_send_domain'):
+            elif 'domain' in element.ioc_type.type_name and module_conf.get('vt_allow_send_domain') is True:
                 status = vt_handler.handle_vt_domain(ioc=element)
                 in_status = InterfaceStatus.merge_status(in_status, status)
 
-            elif element.ioc_type.type_name in ['md5', 'sha1', 'sha224', 'sha256', 'sha512'] and module_conf.get('vt_allow_send_hash'):
+            elif element.ioc_type.type_name in ['md5', 'sha1', 'sha224', 'sha256', 'sha512'] and module_conf.get('vt_allow_send_hash') is True:
                 status = vt_handler.handle_vt_hash(ioc=element)
                 in_status = InterfaceStatus.merge_status(in_status, status)
 
