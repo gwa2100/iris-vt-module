@@ -61,6 +61,33 @@ module_configuration = [
         "section": "Triggers"
     },
     {
+        "param_name": "vt_allow_send_domain",
+        "param_human_name": "Allows plugin to send domains to VT",
+        "param_description": "Set to True to allow for sending of domains to VT for insight incorporation",
+        "default": True,
+        "mandatory": True,
+        "type": "bool",
+        "section": "Allowed Data Submission"
+    },
+    {
+        "param_name": "vt_allow_send_ip",
+        "param_human_name": "Allows plugin to send ip to VT",
+        "param_description": "Set to True to allow for sending of IPs to VT for insight incorporation",
+        "default": True,
+        "mandatory": True,
+        "type": "bool",
+        "section": "Allowed Data Submission"
+    },
+    {
+        "param_name": "vt_allow_send_hash",
+        "param_human_name": "Allows plugin to send hash to VT",
+        "param_description": "Set to True to allow for sending of hashes to VT for insight incorporation",
+        "default": True,
+        "mandatory": True,
+        "type": "bool",
+        "section": "Allowed Data Submission"
+    },
+    {
         "param_name": "vt_on_create_hook_enabled",
         "param_human_name": "Triggers automatically on IOC create",
         "param_description": "Set to True to automatically add a VT insight each time an IOC is created",
